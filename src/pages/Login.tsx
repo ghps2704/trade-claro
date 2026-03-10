@@ -58,6 +58,12 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-bg flex items-center justify-center p-4">
       <div className="w-full max-w-md">
+        <div className="mb-6">
+          <Link to="/" className="inline-flex items-center gap-1.5 text-text-secondary text-sm hover:text-text-primary transition-colors">
+            ← Voltar ao início
+          </Link>
+        </div>
+
         <div className="text-center mb-8">
           <h1 className="font-title text-3xl font-bold text-text-primary mb-2">
             Trade<span className="text-accent">Claro</span>
