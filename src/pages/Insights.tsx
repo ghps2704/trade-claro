@@ -76,7 +76,7 @@ export default function Insights() {
 
       {/* Stats banner */}
       {stats && (
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { label: 'Resultado médio', value: fmt(stats.avg), color: stats.avg >= 0 ? 'text-accent' : 'text-negative' },
             { label: 'Win rate', value: `${stats.winRate.toFixed(1)}%`, color: stats.winRate >= 50 ? 'text-accent' : 'text-attention' },

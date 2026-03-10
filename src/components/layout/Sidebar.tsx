@@ -19,7 +19,7 @@ export default function Sidebar() {
   const initial = user?.user_metadata?.full_name?.[0] || user?.email?.[0] || '?'
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-surface border-r border-border flex flex-col">
+    <aside className="hidden md:flex fixed left-0 top-0 h-full w-64 bg-surface border-r border-border flex-col">
       {/* Logo */}
       <div className="px-6 py-6 border-b border-border">
         <h1 className="font-title text-xl font-bold text-text-primary">

@@ -31,28 +31,28 @@ function useScrolled() {
 
 const TESTIMONIALS = [
   {
-    name: 'Rodrigo M.',
+    name: 'Trader de futuros',
     role: 'Day trader — WINFUT/DOLFUT',
-    avatar: 'R',
+    avatar: '◎',
     color: 'bg-accent/20 text-accent',
-    text: 'Descobri que meu win rate caía 40% quando minha emoção estava acima de 7. Nunca teria percebido isso sem o Trade Claro. Parei de operar nesses dias e meu resultado virou.',
-    result: '+R$ 3.200/mês a mais',
+    text: 'Percebi que meu desempenho caía toda vez que eu estava emocionalmente acima de 7. Sem registrar isso, nunca teria notado o padrão. Foi a primeira mudança concreta que fiz na minha rotina.',
+    insight: 'Padrão emocional identificado',
   },
   {
-    name: 'Fernanda L.',
-    role: 'Trader de ações — B3',
-    avatar: 'F',
+    name: 'Trader de ações',
+    role: 'Swing trader — B3',
+    avatar: '◇',
     color: 'bg-attention/20 text-attention',
-    text: 'Eu sabia que fazia revenge trade, mas não tinha noção da frequência. O sistema me mostrou que 80% das minhas perdas grandes vinham depois de 2 stops seguidos. Mudou minha rotina.',
-    result: 'Drawdown reduzido em 60%',
+    text: 'Eu desconfiava que fazia revenge trade, mas não tinha prova disso. Quando vi no histórico que a maioria das perdas grandes vinha depois de 2 stops seguidos, ficou impossível ignorar.',
+    insight: 'Revenge trade mapeado',
   },
   {
-    name: 'Carlos A.',
-    role: 'Swing trader — cripto e ações',
-    avatar: 'C',
+    name: 'Trader diversificado',
+    role: 'Day e swing — cripto e ações',
+    avatar: '◈',
     color: 'bg-negative/20 text-negative',
-    text: 'Simples, rápido e direto. Em 30 segundos lanço meu trade e já tenho o contexto salvo. Os insights da semana me dão clareza do que ajustar antes de abrir o pregão seguinte.',
-    result: 'Consistência pelo 3º mês',
+    text: 'O registro é rápido e não atrapalha a operação. O que mais vale são os insights semanais — eles me dão um ponto de partida claro para o que ajustar antes de abrir a semana.',
+    insight: 'Rotina semanal de revisão',
   },
 ]
 
@@ -295,7 +295,7 @@ export default function Landing() {
           <div className="hidden md:flex items-center gap-6 text-sm text-text-secondary">
             <a href="#features" className="hover:text-text-primary transition-colors">Funcionalidades</a>
             <a href="#insights" className="hover:text-text-primary transition-colors">Insights</a>
-            <a href="#depoimentos" className="hover:text-text-primary transition-colors">Depoimentos</a>
+            <a href="#depoimentos" className="hover:text-text-primary transition-colors">Percepções</a>
             <a href="#faq" className="hover:text-text-primary transition-colors">FAQ</a>
           </div>
           <div className="flex items-center gap-3">
@@ -679,11 +679,11 @@ export default function Landing() {
       <section id="depoimentos" ref={testimonialsSection.ref} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Depoimentos</p>
+            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Percepções</p>
             <h2 className="font-title text-4xl lg:text-5xl font-bold mb-4">
-              O que os traders dizem
+              O que traders descobrem sobre si mesmos
             </h2>
-            <p className="text-text-secondary text-xl">Resultados reais de traders que mudaram de comportamento.</p>
+            <p className="text-text-secondary text-xl">Padrões comuns que aparecem quando você começa a registrar o lado comportamental das suas operações.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -706,7 +706,7 @@ export default function Landing() {
 
                 {/* Result badge */}
                 <div className="bg-accent/10 border border-accent/20 rounded-xl px-3 py-2 mb-4 text-center">
-                  <p className="text-accent font-bold text-sm">{t.result}</p>
+                  <p className="text-accent font-bold text-sm">{t.insight}</p>
                 </div>
 
                 <div className="flex items-center gap-3 border-t border-border pt-4">
@@ -835,7 +835,7 @@ export default function Landing() {
               <div className="space-y-2">
                 {[
                   { href: '#features', label: 'Funcionalidades' },
-                  { href: '#depoimentos', label: 'Depoimentos' },
+                  { href: '#depoimentos', label: 'Percepções' },
                   { href: '#faq', label: 'FAQ' },
                 ].map(l => (
                   <a key={l.label} href={l.href} className="block text-text-secondary text-sm hover:text-text-primary transition-colors">{l.label}</a>

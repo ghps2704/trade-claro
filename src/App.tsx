@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import Diary from './pages/Diary'
 import Insights from './pages/Insights'
 import Sidebar from './components/layout/Sidebar'
+import BottomNav from './components/layout/BottomNav'
 
 function ProtectedLayout() {
   const { user, loading } = useAuth()
@@ -24,7 +25,8 @@ function ProtectedLayout() {
   return (
     <div className="flex min-h-screen bg-bg">
       <Sidebar />
-      <main className="flex-1 ml-64 p-8">
+      <BottomNav />
+      <main className="flex-1 md:ml-64 p-4 md:p-8 pb-24 md:pb-8">
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/diary" element={<Diary />} />

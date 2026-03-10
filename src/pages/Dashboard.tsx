@@ -151,7 +151,7 @@ export default function Dashboard() {
           </div>
 
           {/* Streak + Best Asset */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className={`bg-surface border rounded-2xl p-5 flex items-center gap-4 ${
               metrics.streakType === 'win' ? 'border-accent/20' : 'border-negative/20'
             }`}>
@@ -209,9 +209,9 @@ export default function Dashboard() {
           </div>
 
           {/* Bottom grid */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {/* Emoção × Resultado */}
-            <div className="col-span-2 bg-surface border border-border rounded-2xl p-5">
+            <div className="lg:col-span-2 bg-surface border border-border rounded-2xl p-5">
               <h2 className="font-title font-semibold text-text-primary mb-4">Emoção × Resultado</h2>
               <div className="space-y-2.5">
                 {trades.slice(0, 8).map(trade => {
