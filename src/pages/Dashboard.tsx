@@ -193,11 +193,11 @@ export default function Dashboard() {
                 const h = Math.max((Math.abs(trade.result) / maxAbs) * 100, 4)
                 const isWin = trade.result >= 0
                 return (
-                  <div key={trade.id} className="flex-1 flex flex-col items-center group relative">
-                    <div
-                      className={`w-full rounded-t-sm transition-all ${isWin ? 'bg-accent/70 group-hover:bg-accent' : 'bg-negative/60 group-hover:bg-negative'}`}
-                      style={{ height: `${h}%` }}
-                    />
+                  <div
+                    key={trade.id}
+                    className={`flex-1 group relative rounded-t-sm transition-all cursor-default ${isWin ? 'bg-accent/70 hover:bg-accent' : 'bg-negative/60 hover:bg-negative'}`}
+                    style={{ height: `${h}%` }}
+                  >
                     <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-bg border border-border rounded-lg px-2 py-1 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
                       <p className="font-bold text-text-primary">{trade.asset}</p>
                       <p className={isWin ? 'text-accent' : 'text-negative'}>{fmt(trade.result)}</p>

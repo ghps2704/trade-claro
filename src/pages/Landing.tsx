@@ -26,24 +26,6 @@ function useScrolled() {
   return scrolled
 }
 
-// ── Animated counter ───────────────────────────────────────────────────────────
-
-function Counter({ target, suffix = '', prefix = '' }: { target: number; suffix?: string; prefix?: string }) {
-  const [n, setN] = useState(0)
-  const { ref, inView } = useInView()
-  useEffect(() => {
-    if (!inView) return
-    let start = 0
-    const step = target / 60
-    const id = setInterval(() => {
-      start += step
-      if (start >= target) { setN(target); clearInterval(id) }
-      else setN(Math.floor(start))
-    }, 1000 / 60)
-    return () => clearInterval(id)
-  }, [inView, target])
-  return <span ref={ref}>{prefix}{n.toLocaleString('pt-BR')}{suffix}</span>
-}
 
 // ── Data ───────────────────────────────────────────────────────────────────────
 
@@ -389,7 +371,7 @@ export default function Landing() {
                   ))}
                 </div>
                 <p className="text-text-secondary text-sm">
-                  <span className="text-text-primary font-semibold">+320 traders</span> já usam o Trade Claro
+                  <span className="text-text-primary font-semibold">Seja um dos primeiros</span> traders a usar o Trade Claro
                 </p>
               </div>
             </div>
@@ -408,21 +390,31 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── STATS ──────────────────────────────────────────────────────────── */}
+      {/* ── BETA BANNER ─────────────────────────────────────────────────────── */}
       <div ref={statsSection.ref} className="py-14 border-y border-border bg-surface/40 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-accent text-sm font-semibold">Acesso antecipado · Beta aberto</span>
+          </div>
+          <h2 className="font-title text-3xl font-bold text-text-primary mb-3">
+            Seja um dos primeiros traders a usar
+          </h2>
+          <p className="text-text-secondary text-lg mb-8 max-w-xl mx-auto">
+            O Trade Claro está em fase beta. Junte-se agora, ajude a moldar o produto e use tudo gratuitamente enquanto crescemos juntos.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             {[
-              { label: 'Trades registrados', value: 18400, suffix: '+' },
-              { label: 'Traders ativos', value: 320, suffix: '+' },
-              { label: 'Insights gerados', value: 5200, suffix: '+' },
-              { label: 'Horas de análise poupadas', value: 940, suffix: '+' },
-            ].map(s => (
-              <div key={s.label}>
-                <p className="font-title text-4xl font-bold text-accent">
-                  {statsSection.inView ? <Counter target={s.value} suffix={s.suffix} /> : `0${s.suffix}`}
-                </p>
-                <p className="text-text-secondary text-sm mt-1.5">{s.label}</p>
+              { icon: '🚀', title: 'Acesso completo grátis', desc: 'Todas as funcionalidades disponíveis sem custo durante o beta.' },
+              { icon: '🎯', title: 'Sem limite de trades', desc: 'Registre quantas operações quiser, sem restrição de plano.' },
+              { icon: '💬', title: 'Influencie o produto', desc: 'Seu feedback vai diretamente para o desenvolvimento das próximas features.' },
+            ].map(item => (
+              <div key={item.title} className="flex items-start gap-4 bg-surface border border-border rounded-2xl p-5">
+                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                <div>
+                  <p className="text-text-primary font-semibold mb-1">{item.title}</p>
+                  <p className="text-text-secondary text-sm">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
