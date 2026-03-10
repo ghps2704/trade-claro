@@ -38,7 +38,7 @@ export const PREDEFINED_TAGS = [
 
 export const ASSETS = [
   // ── Futuros ────────────────────────────────────────
-  'WINFUT', 'DOLFUT', 'INDFUT', 'BGIFUT', 'CCMFUT', 'ICFFUT', 'OZ1FUT', 'DI1FUT',
+  'WINFUT', 'WDOFUT', 'DOLFUT', 'INDFUT', 'BGIFUT', 'CCMFUT', 'ICFFUT', 'OZ1FUT', 'DI1FUT',
 
   // ── Ações — Ibovespa & mais líquidas ──────────────
   'ABEV3', 'ALOS3', 'ALPA4', 'ALSO3', 'ANIM3', 'ARZZ3', 'ASAI3', 'AZUL4',
