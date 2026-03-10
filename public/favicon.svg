@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#111318"/>
+
+  <!-- Bar chart: upward trend -->
+  <!-- Bar 1 — short, red -->
+  <rect x="4" y="22" width="5" height="6" rx="1.5" fill="#FF4560" opacity="0.85"/>
+  <!-- Bar 2 — medium, accent dim -->
+  <rect x="11" y="16" width="5" height="12" rx="1.5" fill="#00D4AA" opacity="0.55"/>
+  <!-- Bar 3 — tall, accent -->
+  <rect x="18" y="11" width="5" height="17" rx="1.5" fill="#00D4AA" opacity="0.8"/>
+  <!-- Bar 4 — tallest, accent bright -->
+  <rect x="25" y="6" width="4" height="22" rx="1.5" fill="#00D4AA"/>
+
+  <!-- Baseline -->
+  <rect x="3" y="28.5" width="26" height="1" rx="0.5" fill="#2A2D35"/>
+
+  <!-- Upward arrow on last bar -->
+  <polyline points="27,4 27,2 29,4" fill="none" stroke="#00D4AA" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
