@@ -262,7 +262,6 @@ export default function Landing() {
   const heroRef = useRef<HTMLDivElement>(null)
   const statsSection = useInView()
   const featuresSection = useInView()
-  const insightsSection = useInView()
   const comparisonSection = useInView()
   const testimonialsSection = useInView()
   const faqSection = useInView()
